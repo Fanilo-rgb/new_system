@@ -1,6 +1,8 @@
+import "dotenv/config";
 import express from 'express';
 import cors from 'cors';
 import appRouter from "./routes/app.routes";
+import {NODE_ENV, PORT} from "./constants/env";
 
 const app = express();
 
@@ -11,6 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/v1/message", appRouter)
 
-app.listen(8080, () => {
-    console.log('Server started on port 8080 in development environment');
+app.listen(PORT, () => {
+    console.log(`Server started on port: ${PORT}\nEnvironment: ${NODE_ENV}`);
 });
