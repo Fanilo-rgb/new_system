@@ -1,4 +1,4 @@
-# quick start
+# Quick start
 if you clone this project, just make sure to run
 ```
 npm install

@@ -10,3 +10,4 @@ const getEnv = (key: string, defaultValue?: string): string => {
 
 export const PORT = getEnv("PORT", "8080");
 export const NODE_ENV = getEnv("NODE_ENV");
+export const MONGO_URI = getEnv("MONGO_URI");
