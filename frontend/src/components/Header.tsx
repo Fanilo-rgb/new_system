@@ -50,7 +50,7 @@ const Header = () => {
 
   const chevronButtonComponent = chevronButtonList.map((c) => {
     return (
-      <NavList>
+      <NavList key={c.index}>
         <ChevronButton
           icon={c.icon}
           isActive={activeIndex === c.index}
@@ -67,7 +67,7 @@ const Header = () => {
         <Link className="p-2 rounded-2xl border-2 hover:border-white bg-white/50 border-emerald-300 transition-all" to={"/"}>
           <LayoutDashboard size={18}/>
         </Link>
-        <h3 className="font-medium">Distributeurs</h3>
+        <h3 className="font-medium hidden sm:block text-base md:text-lg">Distributeurs</h3>
       </div>
       <nav ref={containerRef} className="flex items-center gap-2 h-full rounded-2xl text-base text-gray-800">
         <NavContainer>

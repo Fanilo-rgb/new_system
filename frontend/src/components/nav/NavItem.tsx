@@ -7,8 +7,8 @@ type navItemProps = {
 
 const NavItem = ({ placeholder, to }: navItemProps) => {
   return (
-    <li className="w-32 flex">
-      <Link className="h-10 grid place-items-center link" to={to}>
+    <li className="w-26 md:w-32">
+      <Link className="h-10 text-sm md:text-base grid place-items-center link" to={to}>
         {placeholder}
       </Link>
     </li>
