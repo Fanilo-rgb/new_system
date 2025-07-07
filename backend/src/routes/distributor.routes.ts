@@ -1,14 +1,16 @@
 import { Router } from 'express';
 import {
   createDistributor,
-  deleteDistributor,
-  getDistributor,
+  deleteDistributor, getDistributor,
+  getDistributors,
   updateDistributor
 } from "../controllers/distributor.controller";
 
 const distributorRouter = Router();
 
-distributorRouter.get("/", getDistributor)
+distributorRouter.get("/", getDistributors)
+
+distributorRouter.get("/:id", getDistributor)
 
 distributorRouter.post("/", createDistributor)
 

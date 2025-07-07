@@ -22,17 +22,38 @@ export const createDistributor = async (
   }
 }
 
+export const getDistributors = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const distributors = await Distributor.find({}).select("numberCard name surname cin phone createdAt");
+    res.status(200).json({
+      success: true,
+      data: distributors,
+    })
+  } catch (error) {
+    next(error)
+  }
+}
+
 export const getDistributor = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const distributor = await Distributor.find({})
-    res.status(200).json({
-      success: true,
-      data: distributor,
-    })
+    const { id } = req.params;
+    const distributor = await Distributor.findById(id)
+      .populate("upline", "numberCard name surname phone cin")
+      .populate("sponsor", "numberCard name surname phone cin");
+    if (distributor) {
+      res.status(200).json({
+        success: true,
+        data: distributor,
+      })
+    }
   } catch (error) {
     next(error)
   }

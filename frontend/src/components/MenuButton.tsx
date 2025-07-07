@@ -1,5 +1,6 @@
 import {Menu} from "lucide-react";
 import HamburgerList from "./HamburgerList.tsx";
+import {AnimatePresence} from "motion/react";
 
 type menuButtonProps = {
   isActive: boolean;
@@ -15,7 +16,9 @@ const MenuButton = ({ isActive, onToggle }: menuButtonProps) => {
       >
         <Menu size={18}/>
       </button>
-      { isActive && <HamburgerList/> }
+      <AnimatePresence>
+        { isActive && <HamburgerList/> }
+      </AnimatePresence>
     </div>
   )
 }

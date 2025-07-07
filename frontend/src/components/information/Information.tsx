@@ -1,5 +1,5 @@
 type informationProps = {
-  text: string;
+  text: string | null | undefined;
 }
 
 const Information = ({text}: informationProps) => {

@@ -1,3 +1,4 @@
+import { motion } from 'motion/react'
 import React from 'react'
 
 type informationContainerProps = {
@@ -6,9 +7,14 @@ type informationContainerProps = {
 
 const InformationContainer = ({children}: informationContainerProps) => {
   return (
-    <ul>
+    <motion.ul
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
+      exit={{ opacity: 0 }}
+    >
       {children}
-    </ul>
+    </motion.ul>
   )
 }
 export default InformationContainer

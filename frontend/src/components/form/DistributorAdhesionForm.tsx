@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import FormField from "./FormField";
 import GenderSelector from "./GenderSelector";
-import Button from "./Button";
 import { motion } from "motion/react";
+import Button from "../Button.tsx";
+import FormField from "./FormField.tsx";
 
 const mockDistributors = [
   { id: "1", name: "Andriambololona" },

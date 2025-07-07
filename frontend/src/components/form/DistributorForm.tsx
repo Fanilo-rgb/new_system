@@ -1,15 +1,15 @@
 import { useState } from "react";
-import HeaderWithClose from "./modal/HeaderWithClose.tsx";
 import DistributorExistantForm from "./DistributorExistantForm.tsx";
 import DistributorAdhesionForm from "./DistributorAdhesionForm.tsx";
 import { motion } from "motion/react";
+import HeaderWithClose from "../modal/HeaderWithClose.tsx";
 
 const DistributorForm = () => {
   const [activeTab, setActiveTab] = useState<"Existant" | "Adhésion">("Existant");
 
   return (
     <motion.div
-      initial={{ scale: 0.5, opacity: 0 }}
+      initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{
         duration: 0.8,

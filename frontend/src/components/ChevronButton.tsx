@@ -1,6 +1,7 @@
 import {ChevronDown} from "lucide-react";
 import {type JSX} from "react";
 import MenuList from "./MenuList.tsx";
+import {AnimatePresence} from "motion/react";
 
 type chevronButtonProps = {
   icon: JSX.Element;
@@ -21,7 +22,9 @@ const ChevronButton = ({ icon, onToggle, isActive, link } : chevronButtonProps) 
           <ChevronDown size={18}/>
         </div>
       </button>
-      {isActive && <MenuList onToggle={onToggle} link={link} />}
+      <AnimatePresence>
+        {isActive && <MenuList onToggle={onToggle} link={link} />}
+      </AnimatePresence>
     </div>
   )
 }
